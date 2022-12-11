@@ -1,4 +1,4 @@
-import { readFile } from "fs/promises";
+import { readFileSync } from "fs";
 
 type Choice = "rock" | "paper" | "scissors";
 type Result = "win" | "draw" | "lose";
@@ -90,7 +90,7 @@ function decodedOutcome(coded: string): Result {
   }
 }
 
-const input = await readFile("puzzle-two/input.txt", { encoding: "utf-8" });
+const input = readFileSync("puzzle-two/input.txt", { encoding: "utf-8" });
 const lines = input.split("\n");
 
 const gamePlanForAssumption = lines.map(line => {

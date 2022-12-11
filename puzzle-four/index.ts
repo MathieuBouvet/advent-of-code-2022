@@ -1,4 +1,4 @@
-import { readFile } from "fs/promises";
+import { readFileSync } from "fs";
 
 type Range = {
   start: number;
@@ -44,7 +44,7 @@ function isInRange(range: Range, num: number): boolean {
   return num >= range.start && num <= range.end;
 }
 
-const input = await readFile("puzzle-four/input.txt", {
+const input = readFileSync("puzzle-four/input.txt", {
   encoding: "utf-8",
 });
 

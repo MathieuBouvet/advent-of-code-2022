@@ -1,6 +1,6 @@
-import { readFile } from "fs/promises";
+import { readFileSync } from "fs";
 
-const input = await readFile("./puzzle-one/input.txt", { encoding: "utf-8" });
+const input = readFileSync("./puzzle-one/input.txt", { encoding: "utf-8" });
 
 const inputByElf = input.split("\n\n");
 

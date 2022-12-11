@@ -1,4 +1,4 @@
-import { readFile } from "fs/promises";
+import { readFileSync } from "fs";
 
 function getPriority(str: string): number {
   const charCode = str.charCodeAt(0);
@@ -8,7 +8,7 @@ function getPriority(str: string): number {
   return charCode - 64 + 26;
 }
 
-const input = await readFile("puzzle-three/input.txt", {
+const input = readFileSync("puzzle-three/input.txt", {
   encoding: "utf-8",
 });
 
